@@ -1,4 +1,8 @@
-// Server entry point, imports all server code
+import { Meteor } from 'meteor/meteor';
+import { Employees } from '../imports/api/employees'
 
-import '/imports/startup/server';
-import '/imports/startup/both';
+Meteor.startup(() => {
+  Meteor.publish('employees', function(){
+  	return Employees.find({});
+  })
+});
