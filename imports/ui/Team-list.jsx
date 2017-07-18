@@ -8,7 +8,7 @@ import ActionDeleteForever from 'material-ui/svg-icons/action/delete-forever';
 export default class TeamList extends Component{
 	render(){
 		return (
-			<ListItem primaryText ={ this.props.employee.first_name + ' ' + this.props.employee.last_name }/>
+			<ListItem primaryText ={ this.props.employee.name }/>
 		)
 	}
 }

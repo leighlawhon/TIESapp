@@ -1,5 +1,5 @@
-const fs = require('fs'),
-      PDFParser = require("pdf2json");
+// const fs = require('fs'),
+//       PDFParser = require("pdf2json");
 // const pdfParser = new PDFParser();
 // // fs.readFileSync = () => {
 // //   console.log('fs');

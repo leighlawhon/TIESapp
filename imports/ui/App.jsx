@@ -13,6 +13,7 @@ import Candidate from './Candidate';
 import { createContainer } from 'meteor/react-meteor-data';
  
 import { Employees } from '../api/employees.js';
+import { Companies } from '../api/companies.js';
 
 class App extends Component{
 	constructor(props) {
@@ -67,5 +68,6 @@ App.propTypes = {
 export default createContainer(() => {
   return {
     employees: Employees.find({}).fetch(),
+    companies: Companies.find({}).fetch(),
   };
 }, App);
