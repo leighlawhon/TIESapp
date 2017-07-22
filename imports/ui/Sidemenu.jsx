@@ -34,7 +34,7 @@ export default class Sidemenu extends Component{
               		<NavLink to="/openings"> Current Openings</NavLink>
               	</MenuItem>
               	<MenuItem onTouchTap={this.handleClose}>
-              	<NavLink to="/teams">Teams</NavLink>
+              	<NavLink to="/opportunities">Opportunities</NavLink>
               	</MenuItem>
             </Drawer>
 

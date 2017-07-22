@@ -25,7 +25,7 @@ Meteor.startup(() => {
 				<Route path='/ods' component={ODS} />
 				<Route path='/openings' component={Openings} />
 				<Route path='/newemployee' component={newEmployee} />
-				<Route path='/teams' component={TeamList} />
+				<Route path='/opportunities' component={TeamList} />
 				<Route component={NotFound} />
 			</Switch>
 		</Router>
