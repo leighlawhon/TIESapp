@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {red700} from 'material-ui/styles/colors';
+import {green700, red700, teal200, blue400} from 'material-ui/styles/colors';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import Avatar from 'material-ui/Avatar';
@@ -27,7 +27,7 @@ const muiTheme = getMuiTheme({
     	height: 50,
   	},
 });
-var width = 700,
+var width = 900,
     height = 300,
     margins = {left: 100, right: 100, top: 50, bottom: 50},
     title = "User sample",
@@ -47,16 +47,20 @@ var width = 700,
       return d.index;
     }
 const business = [
-      {name: 'Marketing', uv: 4000, pv: 2400, amt: 2400},
-      {name: 'Leadership', uv: 3000, pv: 1398, amt: 2210},
-      {name: 'Methodologies', uv: 2000, pv: 9800, amt: 2290},
-      {name: 'Analysis', uv: 2780, pv: 3908, amt: 2000},
+      {name: 'Marketing', diana: 4000, jim: 2400, bob: 0},
+      {name: 'Leadership', diana: 3000, jim: 100, bob: 2210},
+      {name: 'Methodologies', diana: 2000, jim: 9800, bob: 2290},
+      {name: 'Business \n Analysis', diana: 200, jim: 3908, bob: 2000},
+      {name: 'Competitive \n Analysis', diana: 200, jim: 500, bob: 2000},
+      {name: 'Change \n Management', diana: 1000, jim: 3908, bob: 2000},
+      {name: 'Requirements Analysis', diana: 200, jim: 300, bob: 2000},
+      {name: 'Strategy', diana: 300, jim: 300, bob: 20},
 ];
 const coding = [
-      {name: 'Marketing', uv: 4000, pv: 2400, amt: 2400},
-      {name: 'Leadership', uv: 3000, pv: 1398, amt: 2210},
-      {name: 'Methodologies', uv: 2000, pv: 9800, amt: 2290},
-      {name: 'Analysis', uv: 2780, pv: 3908, amt: 2000},
+      {name: 'Marketing', diana: 4000, jim: 2400, bob: 2400},
+      {name: 'Leadership', diana: 3000, jim: 1398, bob: 2210},
+      {name: 'Methodologies', diana: 2000, jim: 9800, bob: 2290},
+      {name: 'Analysis', diana: 2780, jim: 3908, bob: 2000},
 ];
 
 class TeamList extends Component{
@@ -74,25 +78,26 @@ class TeamList extends Component{
 					<div className="container">
 						<div className="row">
 							<h1>Team Building</h1>
-							<SkillCard header={'Business'}>
-								<BarChart width={600} height={300} data={business}
+							<SkillCard header={'Business'} icon="work">
+								<BarChart width={1000} height={300} data={business}
 							            margin={{top: 20, right: 30, left: 20, bottom: 5}}>
 							       <XAxis dataKey="name"/>
 							       <YAxis/>
 							       <CartesianGrid strokeDasharray="3 3"/>
 							       <Tooltip/>
 							       <Legend />
-							       <Bar dataKey="pv" stackId="a" fill="#8884d8" />
-							       <Bar dataKey="uv" stackId="a" fill="#82ca9d" />
+							       <Bar dataKey="jim" stackId="a" fill={green700} />
+							       <Bar dataKey="diana" stackId="a" fill={teal200} />
+							       <Bar dataKey="bob" stackId="a" fill={blue400} />
 							      </BarChart>
 							</SkillCard>
-							<SkillCard header={'Coding'}>
+							<SkillCard header={'Coding'}  icon="code">
 
 							</SkillCard>
-							<SkillCard header={'DevOps'}>
+							<SkillCard header={'DevOps'} icon="cloud_upload">
 								
 							</SkillCard>
-							<SkillCard header={'Assets'}>
+							<SkillCard header={'Assets'} icon="insert_photo">
 								
 							</SkillCard>
 						</div>
