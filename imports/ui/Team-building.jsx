@@ -52,6 +52,12 @@ const business = [
       {name: 'Methodologies', uv: 2000, pv: 9800, amt: 2290},
       {name: 'Analysis', uv: 2780, pv: 3908, amt: 2000},
 ];
+const coding = [
+      {name: 'Marketing', uv: 4000, pv: 2400, amt: 2400},
+      {name: 'Leadership', uv: 3000, pv: 1398, amt: 2210},
+      {name: 'Methodologies', uv: 2000, pv: 9800, amt: 2290},
+      {name: 'Analysis', uv: 2780, pv: 3908, amt: 2000},
+];
 
 class TeamList extends Component{
 	renderSkills(){
