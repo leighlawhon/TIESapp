@@ -24,7 +24,9 @@ const muiTheme = getMuiTheme({
 class TeamList extends Component{
 	renderEmployees(){
 		return this.props.employees.map((employee) => {
-			return(<Employee key={employee._id} employee={employee}/>)
+			if (employee.skills) {
+				return(<Employee key={employee._id} employee={employee}/>)
+			};
 		})
 	}
 	render(){
@@ -34,24 +36,26 @@ class TeamList extends Component{
 					<Sidemenu />
 					<div className="container">
 						<div className="row center-align">
-							<div className="col m1 offset-m2">
+							<div className="col m2 offset-m2">
 								{'Team Lead'}
 							</div>
-							<div className="col m1 offset-m2">
+							<div className="col m2">
 								{'Code Review'}
 							</div>
-							<div className="col m1 offset-m2">
+							<div className="col m2">
 								{'Brownbag'}
 							</div>
-							<div className="col m1 offset-m2">
+							<div className="col m2">
 								{'Mentor'}
 							</div>
-							<div className="col m1 offset-m2">
-								{'Meeting Facilitator'}
+							<div className="col m2">
+								{'Scrum Leader'}
 							</div>
 						</div>
 						<div className="row">
-							<List>{ this.renderEmployees() }</List>
+							<div className="col m2">
+								<List>{ this.renderEmployees() }</List>
+							</div>
 						</div>
 					</div>
 				</div>
