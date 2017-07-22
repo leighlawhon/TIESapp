@@ -1,3 +1,9 @@
 /* CSS declarations go here */
 @import url('https://fonts.googleapis.com/css?family=Muli:300,300i,700,700i|Open+Sans:300,300i,700');
 
+.brand h1 {
+	background: url(TM_logo.png) transparent 3px -19px no-repeat;
+    background-size: 5%;
+    padding-left: 110px;
+    font-size: 2em !important;
+}

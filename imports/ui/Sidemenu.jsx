@@ -34,11 +34,11 @@ export default class Sidemenu extends Component{
               		<NavLink to="/openings"> Current Openings</NavLink>
               	</MenuItem>
               	<MenuItem onTouchTap={this.handleClose}>
-              	<NavLink to="/company">Company Profile</NavLink>
+              	<NavLink to="/teams">Teams</NavLink>
               	</MenuItem>
             </Drawer>
 
-            <AppBar title="Chief Diversity Officer" onLeftIconButtonTouchTap={this.handleToggle} />
+            <AppBar title="TeamMatrix.io" className="brand" onLeftIconButtonTouchTap={this.handleToggle} />
             </div>
         );
     }

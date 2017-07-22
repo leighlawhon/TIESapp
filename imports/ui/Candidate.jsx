@@ -4,7 +4,7 @@ import { Card, CardMedia, CardHeader, CardTitle, CardText, CardActions } from 'm
 import RaisedButton from 'material-ui/RaisedButton';
 import Avatar from  'material-ui/Avatar';
 import Chip from 'material-ui/chip';
-import { blue300, blue900 } from 'material-ui/styles/colors';
+import { red700, blue900 } from 'material-ui/styles/colors';
 
 export default class Candidate extends Component{
 	render(){
@@ -22,9 +22,9 @@ export default class Candidate extends Component{
 			    </CardMedia>
 			    <CardText>
 			      <Chip
-			      	backgroundColor={blue300}
+			      	backgroundColor={red700}
 			      >
-			      	<Avatar size={32} color={blue300} backgroundColor={blue900}>2</Avatar>
+			      	<Avatar size={32} color={red700} backgroundColor={blue900}>2</Avatar>
 			      Ball manipulation
 			      </Chip>
 			    </CardText>
