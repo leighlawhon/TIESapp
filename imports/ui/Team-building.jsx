@@ -57,10 +57,27 @@ const business = [
       {name: 'Strategy', diana: 300, jim: 300, bob: 20},
 ];
 const coding = [
-      {name: 'Marketing', diana: 4000, jim: 2400, bob: 2400},
-      {name: 'Leadership', diana: 3000, jim: 1398, bob: 2210},
-      {name: 'Methodologies', diana: 2000, jim: 9800, bob: 2290},
-      {name: 'Analysis', diana: 2780, jim: 3908, bob: 2000},
+      {name: 'html5', diana: 4000, jim: 2400, bob: 2400},
+      {name: 'angularjs', diana: 1000, jim: 20000, bob: 2210},
+      {name: 'html5', diana: 2000, jim: 10090, bob: 2290},
+      {name: 'ruby on rails', diana: 1000, jim: 200, bob: 2000},
+      {name: 'python', diana: 2780, jim: 3908, bob: 2000},
+      {name: 'websocket', diana: 300, jim: 3908, bob: 1000},
+      {name: 'css', diana: 2780, jim: 208, bob: 2000},
+      {name: 'json', diana: 300, jim: 8908, bob: 1000},
+      {name: 'xml', diana: 2780, jim: 908, bob: 2000},
+      {name: 'java', diana: 300, jim: 3908, bob: 1000},
+];
+const devops = [
+      {name: 'amazon web services', diana: 4000, jim: 2400, bob: 2400},
+      {name: 'cloud computing', diana: 3000, jim: 1398, bob: 2210},
+      {name: 'maven', diana: 2000, jim: 9800, bob: 2290},
+      {name: 'heroku', diana: 480, jim: 3908, bob: 3000},
+      {name: 'travis', diana: 3908, jim: 3908, bob: 500},
+      {name: 'jenkins', diana: 2780, jim: 9008, bob: 900},
+      {name: 'tomcat', diana: 300, jim: 508, bob: 900},
+      {name: 'google app engine', diana: 2780, jim: 9008, bob: 900},
+      {name: 'google cloud platform', diana: 600, jim: 7000, bob: 900},
 ];
 
 class TeamList extends Component{
@@ -92,14 +109,32 @@ class TeamList extends Component{
 							      </BarChart>
 							</SkillCard>
 							<SkillCard header={'Coding'}  icon="code">
-
+								<BarChart width={1000} height={300} data={coding}
+							            margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+							       <XAxis dataKey="name"/>
+							       <YAxis/>
+							       <CartesianGrid strokeDasharray="3 3"/>
+							       <Tooltip/>
+							       <Legend />
+							       <Bar dataKey="jim" stackId="a" fill={green700} />
+							       <Bar dataKey="diana" stackId="a" fill={teal200} />
+							       <Bar dataKey="bob" stackId="a" fill={blue400} />
+							      </BarChart>
 							</SkillCard>
 							<SkillCard header={'DevOps'} icon="cloud_upload">
-								
+								<BarChart width={1000} height={300} data={devops}
+							            margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+							       <XAxis dataKey="name"/>
+							       <YAxis/>
+							       <CartesianGrid strokeDasharray="3 3"/>
+							       <Tooltip/>
+							       <Legend />
+							       <Bar dataKey="jim" stackId="a" fill={green700} />
+							       <Bar dataKey="diana" stackId="a" fill={teal200} />
+							       <Bar dataKey="bob" stackId="a" fill={blue400} />
+							      </BarChart>
 							</SkillCard>
-							<SkillCard header={'Assets'} icon="insert_photo">
-								
-							</SkillCard>
+
 						</div>
 					</div>
 				</div>

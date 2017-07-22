@@ -9,10 +9,9 @@ export default class Employee extends Component{
 		return (
 			<Card>
 			    <CardHeader>
-			       
-			    <h2 className="cardHead">
-			    	<i className="material-icons iconCard">{this.props.icon}</i> {this.props.header}
-			    </h2>
+				    <h2 className="cardHead">
+				    	<i className="material-icons iconCard">{this.props.icon}</i> {this.props.header}
+				    </h2>
 			    </CardHeader>
 
 			    <CardText>
