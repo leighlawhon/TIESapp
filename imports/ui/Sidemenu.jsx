@@ -31,10 +31,10 @@ export default class Sidemenu extends Component{
 	          		<NavLink to="/ods"> ODS (Open Divesity Standards) </NavLink>
 	          	</MenuItem>
               	<MenuItem onTouchTap={this.handleClose}>
-              		<NavLink to="/openings"> Current Openings</NavLink>
+              		<NavLink to="/opportunities">Opportunities</NavLink>
               	</MenuItem>
               	<MenuItem onTouchTap={this.handleClose}>
-              	<NavLink to="/teams">Teams</NavLink>
+              	<NavLink to="/teambuilding">Team Building</NavLink>
               	</MenuItem>
             </Drawer>
 
