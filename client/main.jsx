@@ -10,6 +10,7 @@ import newEmployee from '../imports/ui/newEmployee.jsx';
 import Upload from '../imports/ui/Upload.jsx';
 import ODS from '../imports/ui/ODS.jsx';
 import TeamList from '../imports/ui/Team-list.jsx';
+import TeamBuilding from '../imports/ui/Team-building.jsx';
 import Openings from '../imports/ui/Openings.jsx';
 import NotFound from '../imports/ui/NotFound.jsx';
 
@@ -26,6 +27,7 @@ Meteor.startup(() => {
 				<Route path='/openings' component={Openings} />
 				<Route path='/newemployee' component={newEmployee} />
 				<Route path='/opportunities' component={TeamList} />
+				<Route path='/teambuilding' component={TeamBuilding} />
 				<Route component={NotFound} />
 			</Switch>
 		</Router>
