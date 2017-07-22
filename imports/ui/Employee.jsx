@@ -6,7 +6,7 @@ import {ListItem} from 'material-ui/List';
 export default class Employee extends Component{
 	render(){
 		return (
-			<ListItem primaryText ={ this.props.employee.name }/>
+			<div>{ this.props.employee.name }</div>
 		)
 	}
 }

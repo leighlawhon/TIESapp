@@ -25,11 +25,41 @@ class TeamList extends Component{
 	renderEmployees(){
 		return this.props.employees.map((employee) => {
 			if (employee.skills) {
-				return(<Employee key={employee._id} employee={employee}/>)
+				return(<div className="col m2"><Employee key={employee._id} employee={employee}/></div>)
 			};
 		})
 	}
+	renderColumn() {
+		var opportunityLevel = Math.random();
+		if (0 <= opportunityLevel < 0.17) {
+			return "col m2"
+		} else if (0.17 <= opportunityLevel < 0.33) {
+			return "col m2 height30  green lighten-4"
+		} else if (0.33 <= opportunityLevel < 0.5) {
+			return "col m2 height30  green lighten-2";
+		} else if (0.5 <= opportunityLevel < 0.66) {
+			return "col m2 height30  green";
+		} else if (0.66 <= opportunityLevel < 0.83) {
+			return "col m2  height30 green darken-2";
+		} else {
+			return "col m2 green darken-4";
+		}
+
+	}
+	renderEmployeeGrid() {
+		return (
+			<div className="row">
+				{ this.renderEmployees() } 
+				<div className={ this.renderColumn() }></div>
+				<div className={ this.renderColumn() }></div>
+				<div className={ this.renderColumn() }></div>
+				<div className={ this.renderColumn() } ></div>
+				<div className={ this.renderColumn() } ></div>
+			</div>
+		);
+	}
 	render(){
+		console.log(this.renderColumn());
 		return (
 			<MuiThemeProvider muiTheme={muiTheme}> 
 				<div>
@@ -52,11 +82,7 @@ class TeamList extends Component{
 								{'Scrum Leader'}
 							</div>
 						</div>
-						<div className="row">
-							<div className="col m2">
-								<List>{ this.renderEmployees() }</List>
-							</div>
-						</div>
+						{ this.renderEmployeeGrid() }
 					</div>
 				</div>
 			</MuiThemeProvider>
