@@ -6,6 +6,8 @@ import {green700, red700, teal200, blue400} from 'material-ui/styles/colors';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Employees } from '../api/employees.js';
 import { Skills } from '../api/skills.js';
+import Done from 'material-ui/svg-icons/action/done';
+
 
 import SkillCard from './SkillCard'
 import Sidemenu from './Sidemenu'
@@ -26,6 +28,7 @@ const names = [
   'Virginia Andrews',
   'Kelly Snyder',
 ];
+
 const muiTheme = getMuiTheme({
 	fontFamily: 'Open Sans',
 	palette: {
@@ -88,20 +91,30 @@ const devops = [
       {name: 'google cloud platform', diana: 600, jim: 7000, bob: 900},
 ];
 
+const iconStyles = {
+  	display: 'none',
+};
+
 class TeamList extends Component{
 	state = {
-	    values: [],
+	    name_select: [],
 	};
-	handleChange = (event, index, values) => this.setState({values});
+	handleChange = (event, index, name_select) => {
+		this.setState({name_select});
+		const parent = event.target.parentNode;
+		const svg_check = parent.getElementsByTagName('svg');
+		svg_check[0].style.display = "block";
+	}
 
-	menuItems(values) {
-	    return names.map((name) => (
+	menuItems(name_select) {
+	    return this.props.employees.map((employee) => (
 	      <MenuItem
-	        key={name}
+	        key={employee._id._str}
 	        insetChildren={true}
-	        checked={values && values.indexOf(name) > -1}
-	        value={name}
-	        primaryText={name}
+	        checked={name_select && name_select.indexOf(employee) > -1}
+	        value={employee.name}
+	        primaryText={employee.name}
+	        leftIcon={<Done style={iconStyles} color={red700}/>}
 	      />
 	    ));
 	}
@@ -112,22 +125,22 @@ class TeamList extends Component{
 		// })
 	}
 	render(){
-		const {values} = this.state;
+		const {name_select} = this.state;
 		return (
 			<MuiThemeProvider muiTheme={muiTheme}> 
 				<div>
 					<Sidemenu />
 					<div className="container">
-						<div className="row">
-							<h1 className="col m-6">Skills </h1>
+						<div className="row relative">
+							<h1 className="col m9">Skills</h1>
 							<SelectField
-								className="col m-6"
+								className="col m3 right-align"
 						        multiple={true}
 						        hintText="Select a name"
-						        value={values}
+						        value={name_select}
 						        onChange={this.handleChange}
 						      >
-						        {this.menuItems(values)}
+						        {this.menuItems(name_select)}
 						    </SelectField>
 						</div>
 						<div>
@@ -184,7 +197,7 @@ TeamList.propTypes = {
 
 export default createContainer(() => {
   return {
-    employees: Employees.find({}).fetch(),
+    employees: Employees.find({"current_company": "google"}).fetch(),
     skills_list: Skills.find({}).fetch(),
   };
 }, TeamList);
