@@ -19,14 +19,14 @@ Companies.attachSchema(CompanySchema);
  
      companies.insert({
        	team,
-		first_name,
-		last_name,
-		javascript,
-		css,
-      	createdAt: new Date(),
-       	owner: Meteor.userId(),
-       	username: Meteor.user().username,
-     });
+    		first_name,
+    		last_name,
+    		javascript,
+    		css,
+          	createdAt: new Date(),
+           	owner: Meteor.userId(),
+           	username: Meteor.user().username,
+         });
    },
    
  });

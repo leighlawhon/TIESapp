@@ -23,10 +23,10 @@ Employees.attachSchema(EmployeeSchema);
  
      Employees.insert({
        	team,
-		first_name,
-		last_name,
-		javascript,
-		css,
+    		first_name,
+    		last_name,
+    		javascript,
+    		css,
       	createdAt: new Date(),
        	owner: Meteor.userId(),
        	username: Meteor.user().username,

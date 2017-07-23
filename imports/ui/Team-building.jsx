@@ -5,7 +5,8 @@ import {green700, red700, teal200, blue400} from 'material-ui/styles/colors';
 
 import { createContainer } from 'meteor/react-meteor-data';
 import { Employees } from '../api/employees.js';
-import { Skills } from '../api/skills.js';
+import { SkillsList } from '../api/skills_list.js';
+import { Companies } from '../api/companies.js';
 import Done from 'material-ui/svg-icons/action/done';
 
 
@@ -114,12 +115,11 @@ class TeamList extends Component{
 	        checked={name_select && name_select.indexOf(employee) > -1}
 	        value={employee.name}
 	        primaryText={employee.name}
-	        leftIcon={<Done style={iconStyles} color={red700}/>}
-	      />
+	        leftIcon={<Done style={iconStyles} color={red700}/>}/>
 	    ));
 	}
 	renderSkills(){
-		console.log(this.props.employees)
+		console.log(this.props)
 		// return this.props._list.map((skill) => {
 		// 	return(<SkillCard key={skill._id} employee={skill}></SkillCard>)
 		// })
@@ -145,17 +145,7 @@ class TeamList extends Component{
 						</div>
 						<div>
 							<SkillCard header={'Business'} icon="work">
-								<BarChart width={1000} height={300} data={business}
-							            margin={{top: 20, right: 30, left: 20, bottom: 5}}>
-							       <XAxis dataKey="name"/>
-							       <YAxis/>
-							       <CartesianGrid strokeDasharray="3 3"/>
-							       <Tooltip/>
-							       <Legend />
-							       <Bar dataKey="jim" stackId="a" fill={green700} />
-							       <Bar dataKey="diana" stackId="a" fill={teal200} />
-							       <Bar dataKey="bob" stackId="a" fill={blue400} />
-							      </BarChart>
+								{this.renderSkills()}	
 							</SkillCard>
 							<SkillCard header={'Coding'}  icon="code">
 								<BarChart width={1000} height={300} data={coding}
@@ -198,7 +188,8 @@ TeamList.propTypes = {
 export default createContainer(() => {
   return {
     employees: Employees.find({"current_company": "google"}).fetch(),
-    skills_list: Skills.find({}).fetch(),
+    skills_list: SkillsList.find().fetch(),
+    companies: Companies.find().fetch()
   };
 }, TeamList);
 
