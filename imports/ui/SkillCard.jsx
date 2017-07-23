@@ -8,13 +8,10 @@ export default class Employee extends Component{
 	render(){
 		return (
 			<Card>
-			    <CardHeader>
-				    <h2 className="cardHead">
+			    <CardText>
+			    	<h2 className="cardHead">
 				    	<i className="material-icons iconCard">{this.props.icon}</i> {this.props.header}
 				    </h2>
-			    </CardHeader>
-
-			    <CardText>
 			    	{this.props.children}
 			    </CardText>
 			</Card>
