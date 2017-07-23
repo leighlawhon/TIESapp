@@ -30,14 +30,18 @@ export default class Sidemenu extends Component{
           		<MenuItem onTouchTap={() => {this.handleClose() }} >
 	          		<NavLink to="/ods"> ODS (Open Divesity Standards) </NavLink>
 	          	</MenuItem>
-              	<MenuItem onTouchTap={this.handleClose}>
-              		<NavLink to="/opportunities">Opportunities</NavLink>
-              	</MenuItem>
+              	
               	<MenuItem onTouchTap={this.handleClose}>
 
               	<NavLink to="/teambuilding">Team Building</NavLink>
 
               	</MenuItem>
+                <MenuItem onTouchTap={this.handleClose}>
+                  <NavLink to="/opportunities">Opportunities</NavLink>
+                </MenuItem>
+                <MenuItem onTouchTap={this.handleClose}>
+                  <NavLink to="/next">Next</NavLink>
+                </MenuItem>
             </Drawer>
 
             <AppBar title="TeamMatrix.io" className="brand" onLeftIconButtonTouchTap={this.handleToggle} />

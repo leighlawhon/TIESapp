@@ -3,21 +3,29 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {green700, red700, teal200, blue400} from 'material-ui/styles/colors';
 
-import RaisedButton from 'material-ui/RaisedButton';
-import Avatar from 'material-ui/Avatar';
-import ActionDeleteForever from 'material-ui/svg-icons/action/delete-forever';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Employees } from '../api/employees.js';
 import { Skills } from '../api/skills.js';
 
-import { List } from 'material-ui/List';
-import Employee from './Employee'
 import SkillCard from './SkillCard'
 import Sidemenu from './Sidemenu'
-import LineChart from 'recharts';
-import Line from 'recharts';
+
 import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
+const names = [
+  'Oliver Hansen',
+  'Van Henry',
+  'April Tucker',
+  'Ralph Hubbard',
+  'Omar Alexander',
+  'Carlos Abbott',
+  'Miriam Wagner',
+  'Bradley Wilkerson',
+  'Virginia Andrews',
+  'Kelly Snyder',
+];
 const muiTheme = getMuiTheme({
 	fontFamily: 'Open Sans',
 	palette: {
@@ -63,7 +71,7 @@ const coding = [
       {name: 'ruby on rails', diana: 1000, jim: 200, bob: 2000},
       {name: 'python', diana: 2780, jim: 3908, bob: 2000},
       {name: 'websocket', diana: 300, jim: 3908, bob: 1000},
-      {name: 'css', diana: 2780, jim: 208, bob: 2000},
+      {name: 'css', diana: 27800, jim: 208, bob: 2000},
       {name: 'json', diana: 300, jim: 8908, bob: 1000},
       {name: 'xml', diana: 2780, jim: 908, bob: 2000},
       {name: 'java', diana: 300, jim: 3908, bob: 1000},
@@ -81,6 +89,22 @@ const devops = [
 ];
 
 class TeamList extends Component{
+	state = {
+	    values: [],
+	};
+	handleChange = (event, index, values) => this.setState({values});
+
+	menuItems(values) {
+	    return names.map((name) => (
+	      <MenuItem
+	        key={name}
+	        insetChildren={true}
+	        checked={values && values.indexOf(name) > -1}
+	        value={name}
+	        primaryText={name}
+	      />
+	    ));
+	}
 	renderSkills(){
 		console.log(this.props.employees)
 		// return this.props._list.map((skill) => {
@@ -88,13 +112,25 @@ class TeamList extends Component{
 		// })
 	}
 	render(){
+		const {values} = this.state;
 		return (
 			<MuiThemeProvider muiTheme={muiTheme}> 
 				<div>
 					<Sidemenu />
 					<div className="container">
 						<div className="row">
-							<h1>Team Building</h1>
+							<h1 className="col m-6">Skills </h1>
+							<SelectField
+								className="col m-6"
+						        multiple={true}
+						        hintText="Select a name"
+						        value={values}
+						        onChange={this.handleChange}
+						      >
+						        {this.menuItems(values)}
+						    </SelectField>
+						</div>
+						<div>
 							<SkillCard header={'Business'} icon="work">
 								<BarChart width={1000} height={300} data={business}
 							            margin={{top: 20, right: 30, left: 20, bottom: 5}}>

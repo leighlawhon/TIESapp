@@ -6,7 +6,7 @@ import {red700} from 'material-ui/styles/colors';
 
 import Divider from 'material-ui/Divider';
 import CompanyStats from './Company-stats';
-import Candidate from './Candidate';
+import Home from './Home';
 import Sidemenu from './Sidemenu';
 
  
@@ -49,9 +49,7 @@ export default class App extends Component{
 					<Sidemenu />
 					<div className="container">
 						<div className="row">
-							<Candidate/>
-							<CompanyStats/>
-							<Divider />
+							<Home/>
 						</div>
 					</div>
 				</div>

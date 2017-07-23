@@ -13,6 +13,7 @@ import TeamList from '../imports/ui/Team-list.jsx';
 import TeamBuilding from '../imports/ui/Team-building.jsx';
 import Openings from '../imports/ui/Openings.jsx';
 import NotFound from '../imports/ui/NotFound.jsx';
+import Next from '../imports/ui/Next.jsx';
 
 const history = createHistory()
 
@@ -28,6 +29,7 @@ Meteor.startup(() => {
 				<Route path='/newemployee' component={newEmployee} />
 				<Route path='/opportunities' component={TeamList} />
 				<Route path='/teambuilding' component={TeamBuilding} />
+				<Route path='/next' component={Next} />
 				<Route component={NotFound} />
 			</Switch>
 		</Router>

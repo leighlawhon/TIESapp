@@ -3,14 +3,14 @@
 
 .brand h1 {
 	background: url(TM_logo.png) transparent 3px -22px no-repeat;
-    background-size: 7%;
+    background-size: 95px;
     padding-left: 117px;
     font-size: 1.7em !important;
 }
 
 .height30{
 	height: 30px !important;
-=======
+}
 .cardHead{
 	font-size: 2em;
 	margin-top: 0px !important; 
@@ -27,4 +27,14 @@
 }
 
 h1{
-	font-size: 3em;
+	font-size: 2.5em;
+}
+p{
+	font-size: 1.1em;
+}
+td, th{
+	font-size: 1.2em;
+}
+.intro{
+	font-size: 1.5em;
+}

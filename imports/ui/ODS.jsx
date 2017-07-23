@@ -22,11 +22,11 @@ export default class Upload extends Component{
 				<div>
 					<Sidemenu />
 					<div className="container">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossOrigin="anonymous"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossOrigin="anonymous"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossOrigin="anonymous"></script>
 					<h1>Open Diversity Standards</h1>
-				    <div id="TIESapp" class="container">
+				    <div id="TIESapp" className="container">
     <Divider />
     <h2>Software Development Engineer</h2>
 
@@ -41,23 +41,30 @@ export default class Upload extends Component{
     <p>
       Candidates will be reviewed based on skills that they be actually be using during the course of their work day
       </p>
-    <div class="table-responsive">
-      <table class="table table-bordered table-striped">
+    <div className="table-responsive">
+      <table className="table table-striped">
+      	<thead>
         <tr>
           <th>Qualification</th>
-          <th>How we evaluate:</th>
+          <th>How we evaluate</th>
+          <th>Who is evaluating</th>
         </tr>
+        </thead>
+        <tbody>
         <tr>
           <td>Database</td>
           <td>5 multiple choice questions</td>
+          <td>Jim Henson</td>
         </tr>
         <tr>
           <td>Java Programming Language</td>
           <td>10 multiple choice questions</td>
+          <td>Diana Ross</td>
         </tr>
         <tr>
           <td>Algorithms</td>
           <td>A small project invovling solving a problem</td>
+          <td>Jim Henson</td>
         </tr>
         <tr>
           <td>Leadership and Mentoring</td>
@@ -67,7 +74,9 @@ export default class Upload extends Component{
               <li>Be asked the same standards questions</li>
             </ul>
           </td>
+          <td>Jim Henson</td>
         </tr>
+        </tbody>
       </table>
   </div>
         </div>
