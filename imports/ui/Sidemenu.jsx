@@ -10,11 +10,10 @@ export default class Sidemenu extends Component{
     	this.state = {open:false};
     	this.handleToggle = this.handleToggle.bind(this)
     	this.handleClose = this.handleClose.bind(this)
-    	console.log(this.props)
+ 
   	}
   	handleToggle() {
     	this.setState({open: !this.state.open});
-    	console.log(this)
    	}
   	handleClose() { this.setState({open: false}); }
     render() {
@@ -28,12 +27,12 @@ export default class Sidemenu extends Component{
 	          		<NavLink to="/">Home </NavLink>
           		</MenuItem>
           		<MenuItem onTouchTap={() => {this.handleClose() }} >
-	          		<NavLink to="/ods"> ODS (Open Divesity Standards) </NavLink>
+	          		<NavLink to="/ods"> Open Divesity Standards (ODS)) </NavLink>
 	          	</MenuItem>
               	
               	<MenuItem onTouchTap={this.handleClose}>
 
-              	<NavLink to="/teambuilding">Team Building</NavLink>
+              	<NavLink to="/teambuilding">Skill Stack</NavLink>
 
               	</MenuItem>
                 <MenuItem onTouchTap={this.handleClose}>
