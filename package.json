@@ -10,7 +10,7 @@
     "history": "^4.6.3",
     "linkedin-pdf-to-json": "^1.5.2",
     "material-ui": "^0.18.6",
-    "meteor-node-stubs": "~0.2.4",
+    "meteor-node-stubs": "~1.2.8",
     "pdf2json": "^1.1.7",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
